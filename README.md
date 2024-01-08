@@ -20,9 +20,22 @@ So,here are the step I followed in this problem statement:
 - Begin by importing essential libraries such as NumPy for basic calculations, Pandas for handling dataframes, Matplotlib for plotting graphs, and Seaborn for visualizing data.
 
 --> Step-2 Load the datast.
-- Load the dataset named "Movie_ID_Titles" from a CSV file using the Pandas library.
-- Now load the second one which is "u.data" which contains ratings corresponding to item_id and user_id.
-- Let's merge both dataframes together so we can have ID with the movie name.
+- Load two datasets: "Movie_ID_Titles" contains information about movie titles, and "u.data" contains user ratings corresponding to item_id and user_id. 
+- Merge these datasets to create a comprehensive dataframe with both movie names and ratings.
 
---> Step-2: Data Visualization
-- 
+--> Step-3: Data Visualization
+- Create datasets, 'rating_df_count' and 'rating_df_mean,' listing movie titles along with their ratings based on count and mean, respectively.
+-  Combine these two datasets into 'rating_mean_count_df.
+- Visualize the distribution of mean ratings and rating counts using histograms
+- Sort movies by mean rating and count to identify highly-rated movies with substantial reviews.
+  
+--> Step-4: Perform Item-Based Collaborative Filtering On One Movie Sample
+- Generate a user-movie matrix using a pivot table, showcasing how users have rated various movies.
+-Select a movie sample, like 'Titanic,' and find correlations between 'Titanic' and other movies.
+- Filter the correlation vector, discarding movies with fewer than 80 reviews, to ensure meaningful correlations.
+
+--> Step-5: Create an Item-Based Collaborative Filter on Entire Dataset
+- Calculate correlations between all movies in the dataframe using the Pearson method. 
+- Create our own dataframe with our own ratings named 'My_Ratings.csv'.
+- Now we make a list of similar movies i have rated with almost same ratings.
+- Then sort the list according to correlations and recommend the most similar movie to user.
